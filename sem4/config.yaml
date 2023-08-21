@@ -1,0 +1,17 @@
+folder_in : "/home/user2/tst/file"
+folder_out : "/home/user2/tst/out"
+folder_ext : "/home/user2/tst/ext"
+folder_badarx: "/home/user2/tst/badarx"
+folder_stat: "/home/user/PycharmProjects/pythonProject"
+count_files: 5
+size_file: 1M
+archive_type: 7z
+archive_nega_type: zip7
+
+
+local_path: "/home/user"
+remote_path: "/home/user2"
+host: "0.0.0.0"
+user: user2
+stat_file: "/home/user2"
+folder_log_user2: "/home/user2"
