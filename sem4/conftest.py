@@ -1,6 +1,6 @@
 import random
 import string
-import datetime
+from datetime import datetime
 import yaml
 import pytest
 from sshcheckers import ssh_checkout,ssh_getout
@@ -74,8 +74,8 @@ def write_stat_log():
 
 @pytest.fixture()
 def start_time():
-    return datetime.now().strfline("%Y-%m-%d %H:%M:%S")
+    return datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
 
-def save_log(starttime,name):
-    ssh_getout(data["host"], data["user"], "0000","journalctl --since '{}' >>{}".format(starttime),name)
+def save_log(start_time,name):
+    ssh_getout(data["host"], data["user"], "0000","journalctl --since '{}' >>{}".format(start_time,name))

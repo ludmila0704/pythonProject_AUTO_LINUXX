@@ -21,7 +21,6 @@ def test_step0():
 def test_step1(make_folders, clear_folders, make_files, write_stat_log, start_time):
     # test1
     res1 = ssh_checkout(data["host"], data["user"], "0000",
-
                         "cd {}; 7z a -t{} {}/arx1.{}".format(data["folder_in"], data["archive_type"],
                                                              data["folder_out"],
                                                              data["archive_type"]), "Everything is Ok"), "Test1 Fail"
@@ -35,7 +34,6 @@ def test_step2(clear_folders, make_files, write_stat_log):
     # test2
     res = []
     res.append(ssh_checkout(data["host"], data["user"], "0000",
-
                             "cd {}; 7z a -t{} {}/arx1.{}".format(data["folder_in"], data["archive_type"],
                                                                  data["folder_out"],
                                                                  data["archive_type"]), "Everything is Ok"))
@@ -53,7 +51,6 @@ def test_step2(clear_folders, make_files, write_stat_log):
 def test_step3(write_stat_log):
     # test3
     assert ssh_checkout(data["host"], data["user"], "0000",
-
                         "cd {}; 7z t -t{} {}/arx1.{}".format(data["folder_in"], data["archive_type"],
                                                              data["folder_out"],
                                                              data["archive_type"]), "Everything is Ok"), "Test3 Fail"
@@ -78,7 +75,6 @@ def test_step5(clear_folders, make_files, write_stat_log):
                                                                  data["archive_type"]), "Everything is Ok"))
     for item in make_files:
         res.append(ssh_checkout(data["host"], data["user"], "0000",
-
                                 "cd {}; 7z l -t{} arx1.{}".format(data["folder_out"], data["archive_type"],
                                                                   data["archive_type"]), item))
     assert all(res)
@@ -87,12 +83,10 @@ def test_step5(clear_folders, make_files, write_stat_log):
 def test_step6(clear_folders, make_files, write_stat_log):
     res = []
     res.append(ssh_checkout(data["host"], data["user"], "0000",
-
                             "cd {}; 7z a -t{} {}/arx1.{}".format(data["folder_in"], data["archive_type"],
                                                                  data["folder_out"],
                                                                  data["archive_type"]), "Everything is Ok"))
     res.append(ssh_checkout(data["host"], data["user"], "0000",
-
                             "cd {}; 7z x -t{} arx1.{} -o{} -y".format(data["folder_out"], data["archive_type"],
                                                                       data["archive_type"],
                                                                       data["folder_ext"]), "Everything is Ok"))
